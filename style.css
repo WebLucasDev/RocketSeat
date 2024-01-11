@@ -38,12 +38,14 @@ body{
 
     background: var(--fundo) no-repeat
     top center/cover;
+    height: 100vh;
 }
 
 /* tamanho da caixa principal */
 
 .container{
-    width: 360px;
+    width: 100%;
+    max-width: 588px;
     height: 712px;
     margin: 56px auto 0px;
     padding: 0 24px;
@@ -92,6 +94,8 @@ body{
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
+
+    animation: botao-safado-voltando 0.7s;
 }
 
 .botao-light span{
@@ -104,8 +108,7 @@ body{
 }
 
 .light .botao-light button{
-    right: 0;
-    left: initial;
+    animation: botao-safado 0.7s forwards;
 }
 
 /* links */
@@ -161,4 +164,35 @@ ul li a:hover{
     background: var(--social-mideas);
     padding: 16px;
     border-radius: 50%;
+}
+
+/* media queries */
+@media (max-width: 700px) {
+    
+    :root{
+        --fundo: url(/assets/bg-desktop.jpg);
+    }
+
+    .light{
+        --fundo: url(/assets/bg-desktop-light.jpg);
+    }
+
+}
+
+@keyframes botao-safado {
+    from{
+        left: 0;
+    }
+    to{
+        left: 50%;
+    }
+}
+
+@keyframes botao-safado-voltando {
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
+    }
 }
