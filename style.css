@@ -1,0 +1,164 @@
+/* Body e reset css */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: var(--principal);
+    text-decoration: none;
+}
+
+:root{
+    --principal: white;
+    --fundo: url(/assets/bg-mobile.jpg);
+    --borda-botoes: rgba(255, 255, 255, 0.5);
+    --fundo-botoes: rgba(255, 255, 255, 0.05);
+    --fundo-botoes-houver: rgba(255, 255, 255, 0.02);
+    --social-mideas: rgba(0, 0, 0, 0.1);
+    --botao-fundo: url(assets/sun.svg);
+}
+
+.light{
+    --principal: black;
+    --fundo: url(/assets/bg-mobile-light.jpg);
+    --borda-botoes: rgba(0, 0, 0, 0.5);
+    --fundo-botoes: rgba(0, 0, 0, 0.05);
+    --fundo-botoes-houver: rgba(255, 255, 255, 0.02);
+    --social-mideas: rgba(0, 0, 0, 0.1);
+    --botao-fundo: url(assets/moon-stars.svg);
+}
+
+
+body{
+    /* background-image: url(/assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover; */
+
+    background: var(--fundo) no-repeat
+    top center/cover;
+}
+
+/* tamanho da caixa principal */
+
+.container{
+    width: 360px;
+    height: 712px;
+    margin: 56px auto 0px;
+    padding: 0 24px;
+}
+
+/* foto de perfil e @ */
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+}
+
+.profile img{
+    width: 112px;
+    margin-bottom: 8px;
+}
+
+.profile a{
+    display: block;
+    font-weight: 500;
+    line-height: 24px;
+    width: max-content;    
+}
+
+/* botão light dark */
+
+.botao-light{
+    /* border: 1px solid; */
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+
+}
+
+.botao-light button{
+    width: 32px;
+    height: 32px;
+    background: rgb(193, 192, 192) var(--botao-fundo) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+ 
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.botao-light span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--botao-fundo) rgba(255, 255, 255, 0.404);
+    border: 1px solid var(--borda-botoes);
+    border-radius: 9999px;
+}
+
+.light .botao-light button{
+    right: 0;
+    left: initial;
+}
+
+/* links */
+
+ul{
+    list-style: none;  
+    display: flex;  
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 24px 0px;
+}
+
+ul li a{
+    border: solid 1px var(--borda-botoes);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+
+    background: var(--fundo-botoes);
+    -webkit-backdrop-filter: blur(4px);
+    font-weight: 500;
+    
+    transition: all 0.4s;
+}
+
+ul li a:hover{
+    background: var(--fundo-botoes-houver); 
+    border: solid 1.5px var(--principal);
+}
+
+/* social links */
+
+.social-links{
+    display: flex;
+    padding: 24px 0px;
+    font-size: 24px;
+    justify-content: center;
+}
+
+.social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+.social-links a:hover{
+    background: var(--social-mideas);
+    padding: 16px;
+    border-radius: 50%;
+}
